@@ -1,12 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View, StyleSheet, SafeAreaView } from "react-native";
+import CommentsProvider from "./src/providers/CommentsProvider";
+import CommentsScreen from "./src/screens/CommentsScreen/CommentsScreen";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <CommentsProvider>
+      <SafeAreaView style={styles.container}>
+        <CommentsScreen />
+      </SafeAreaView>
+    </CommentsProvider>
   );
 }
 
@@ -14,7 +16,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
